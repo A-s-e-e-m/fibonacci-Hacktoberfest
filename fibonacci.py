@@ -1,17 +1,16 @@
-def fibonacci(n):
-    """a very bad implementation for finding the n'th element of the fibonacci sequence."""
-    if n==0:
-        print("ULAN xd")
-    elif n==1 or n==2:
-        return 1
-    else:
-        return fibonacci(n-1) + fibonacci(n-2)
+# Python program to display the Fibonacci sequence up to n-th term using recursive functions
 
-def fibonacci_seq(*args):
-    """finds a subsequence of the fibonacci sequence using the fibonacci function"""
-    if len(args) == 1:
-        return [fibonacci(n) for n in range(1,args[0]+1)]
-    elif len(args) == 2:
-        return [fibonacci(n) for n in range(args[0], args[1]+1)]
-    else:
-        print("ulan")
+def recur_fibo(n):
+   if n <= 1:
+       return n
+   else:
+       return(recur_fibo(n-1) + recur_fibo(n-2))
+
+nterms=10 #change this for no. of terms.
+# check if the number of terms is valid
+if nterms <= 0:
+   print("Plese enter a positive integer")
+else:
+   print("Fibonacci sequence:")
+   for i in range(nterms):
+       print(recur_fibo(i))
